@@ -245,5 +245,20 @@ return {
     keys = {
       { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     }
-  }
+  },
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {},
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.ts_lsp"
+      require "configs.sourcekit"
+    end,
+  },
 }
